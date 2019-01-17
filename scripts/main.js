@@ -7,15 +7,23 @@ for (let i = pages.length - 1; i >= 0; i--){
 
 document.body.addEventListener("keydown", (e) => {
    // console.log(e);
-   if (e.code === "ArrowRight") {
-       document.getElementById("arr-right").click();
-   } else if (e.code === "ArrowLeft") {
-        document.getElementById("arr-left").click();
+    if (!document.getElementById("help").classList.contains("showHelp")) {
+        if (e.code === "ArrowRight" || e.code === "ArrowDown") {
+            document.getElementById("arr-right").click();
+        } else if (e.code === "ArrowLeft" || e.code === "ArrowUp") {
+            document.getElementById("arr-left").click();
+        }
     }
 });
 
 const scrollHandler = (e) => {
-    console.log(e);
+    if (!document.getElementById("help").classList.contains("showHelp")) {
+        if (e.deltaY > 0) {
+            document.getElementById("arr-right").click();
+        } else if (e.deltaY < 0) {
+            document.getElementById("arr-left").click();
+        }
+    }
 };
 
 // document.body.addEventListener('mousewheel', scrollHandler);
@@ -105,6 +113,14 @@ function togglePlay() {
     }
 }
 
+function toggleHelp() {
+
+    if (document.getElementById("help").classList.contains("showHelp")) {
+        document.getElementById("help").classList.remove("showHelp");
+    } else {
+        document.getElementById("help").classList.add("showHelp");
+    }
+}
 
 // window.onscrollwheel = function (e) {
 //  console.log("E");
