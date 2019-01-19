@@ -248,3 +248,46 @@ i:active {
     opacity: 1 !important;
     pointer-events: all !important;
 }
+
+.nav {
+    background-color: rgba(255, 255, 255, 0.53);
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+    height: 30px;
+    color: black;
+}
+
+.nav--open {
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.59);
+    height: auto;
+}
+
+#credits {
+    height: 70vh;
+    grid-column-start: 1;
+    grid-column-end: 20;
+    grid-row-start: 1;
+    grid-row-end: 20;
+}
+#credits h1 {
+    text-align: center;
+}
+
+#credits div {
+    text-align: center;
+}
+
+#mainCredits {
+    height: 100%;
+}
+
+#mainCredits #scrollable1 {
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+

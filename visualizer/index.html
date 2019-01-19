@@ -6,7 +6,26 @@
   <title>Simple Audio Visualisation</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+  <script type="text/javascript">
 
+    window.theCallData = ""
+    window.addEventListener('message', function(theEvent) {
+
+      if (theEvent.data[0]=== 'play'){
+        window.theCallData = theEvent.data[1];
+        focus = true;
+      }
+
+      if (theEvent.data[0]=== 'pause'){
+        focus = false;
+      }
+
+    }, false);
+    let focus = true;
+    function childfunction() {
+
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   

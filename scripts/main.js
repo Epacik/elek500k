@@ -17,7 +17,9 @@ document.body.addEventListener("keydown", (e) => {
 });
 
 const scrollHandler = (e) => {
-    if (!document.getElementById("help").classList.contains("showHelp")) {
+    // console.log(e);
+    if (!document.getElementById("help").classList.contains("showHelp") && e.target.id != "scroll1" && e.target.id != "scrollable1" && e.target.parentNode.id != "scroll1") {
+
         if (e.deltaY > 0) {
             document.getElementById("arr-right").click();
         } else if (e.deltaY < 0) {
@@ -75,7 +77,7 @@ function runKol() {
                 clearInterval(kolInt);
             }
             kolI -= 1;
-        }, 2000);
+        }, 3000);
     } else {
         clearInterval(kolInt);
     }
@@ -83,12 +85,43 @@ function runKol() {
 }
 
 var e = document.getElementById('kolazWrap');
-var observer = new MutationObserver(function (event) {
+var observer = new MutationObserver(function () {
     showPh();
     runKol();
 });
 
 observer.observe(e, {
+    attributes: true,
+    attributeFilter: ['class'],
+    childList: false,
+    characterData: false
+});
+
+var credits = document.getElementById('creditsWrapper');
+var observerCredits = new MutationObserver(function () {
+    setAutoScroll(20);
+    if (credits.classList.contains("slide--current")) {
+        setAutoScroll(20);
+    }
+});
+
+observerCredits.observe(credits, {
+    attributes: true,
+    attributeFilter: ['class'],
+    childList: false,
+    characterData: false
+});
+
+var eAudio = document.getElementById('visualizer');
+var observerAudio = new MutationObserver(function () {
+    if (eAudio.classList.contains("slide--current")) {
+        document.getElementById('audio').contentWindow.start();
+    } else {
+        document.getElementById('audio').contentWindow.stop();
+    }
+});
+
+observerAudio.observe(eAudio, {
     attributes: true,
     attributeFilter: ['class'],
     childList: false,
@@ -120,6 +153,10 @@ function toggleHelp() {
     } else {
         document.getElementById("help").classList.add("showHelp");
     }
+}
+
+function shufflePhotos() {
+
 }
 
 // window.onscrollwheel = function (e) {
