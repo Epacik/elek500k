@@ -10,8 +10,19 @@
  */
 {
     // Lighter to darker.
-    const colors = ['#f6f6f6','#f0f0f0','#e3e3e3','#d7d7d7','#d0d0d0'];
+    const colors1 = ['#f6f6f6','#f0f0f0','#e3e3e3','#d7d7d7','#d0d0d0'];
+    const colors2 = ['#060606','#0f0f0f','#3e3e3e','#7d7d7d','#0d0d0d'];
 
+    let colors = colors1;
+
+
+    function switchPallete() {
+        if (colors[0] == colors1[0]) {
+            colors = colors2;
+        } else{
+            colors = colors1;
+        }
+    }
     // The page turning animations.
     class PageTurn {
         constructor(el, pagesTotal) {

@@ -41,6 +41,19 @@
 		</div>
 		<i id="helper" onclick="toggleHelp()"
 		   class="fas fa-3x fa-question-circle"></i>
+		<div id="darkModeSwitch">
+			<div class="elek">
+				<div class="card__face card__face--front">
+					<img style="margin-right: 5px;" src="./img/switch/dark.png" alt="">
+				</div>
+				<div class="card__face card__face--back">
+					<img style="margin-left: 5px;" src="./img/switch/light.png" alt="">
+				</div>
+
+			</div>
+		</div>
+
+		<div id="chMask"></div>
 		<main>
 
 			<div class="slideshow">
@@ -76,7 +89,7 @@
 					<figure class="slide__figure bigElement" >
 						<div class="slide__figure-inner bigElement1"  style="left: 4px">
 							<div id="kolaz" class="slide__figure-img"  style="">
-								<img src="./img/kolaz/k1.jpg" alt="">
+								<img id="mainPh" src="./img/kolaz/k1.jpg" alt="">
 								<img style="top: 10%; left: 20%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i1.jpg" alt="">
 								<img  style="right: 10%; bottom: 20%; height: 50%" class="indPh"
@@ -189,20 +202,22 @@
 						</div>
 						<figcaption>
 							<span class="slide__figure-title">A oto i gwóźdź programu! Kolosalny film autorstwa
-								Pargusa.</span>
-							<span class="slide__figure-description">Trwa 3 godziny więc lepiej się przygotuj!</span>
+								Pargusa i jego ekipy.</span><br>
+							<span class="slide__figure-description">Trwa 3 godziny więc lepiej przygotuj popcorn,
+                            czy coś w tym stylu.</span>
 						</figcaption>
 					</figure>
 				</div>
-				<div id="creditsWrapper" class="slide slide--layout-5">
-					<figure class="slide__figure">
-						<div class="slide__figure-inner">
-							<section id='credits' class="slide__figure-img">
-								<div id="mainCredits">
-									<h1>Osoby które chciały być wpisane na tę listę:</h1>
-									<div id="scrollable1">
+										<div id="creditsWrapper" class="slide slide--layout-5">
+											<figure class="slide__figure">
+												<div class="slide__figure-inner">
+													<section id='credits' class="slide__figure-img">
+														<div id="mainCredits">
+															<h1>Osoby które chciały być wpisane na tę listę:</h1>
+															<div id="scrollable1">
 										<section id="scroll1">
-											<p style="margin-top: 60vh">Shima</p>
+											<p style="margin-top: 60vh">Antharnest</p>
+											<p>Shima</p>
 											<p>Doktorek</p>
 											<p>ilumi</p>
 											<p>Promet</p>
@@ -218,7 +233,6 @@
 											<p>Beziak</p>
 											<p>"Jakub ""Senpai"" Woźny "</p>
 											<p>Erkirez</p>
-											<p>Antharnest</p>
 											<p>DamVel (na yt) w realu Antyk</p>
 											<p>Szkiba</p>
 											<p>Agrest</p>
@@ -252,17 +266,17 @@
 											<p>Sandra ^.^</p>
 											<p>"Weronika ""N1KOdem"" Grudowska"</p>
 											<p>Maru & Keszka</p>
+											<p>Trufla ^.^</p>
+											<p>Mistrzyni fun fun Pomidor </p>
+											<p>"Konrad ""KonradMAX"" Duda"</p>
+											<p>PiXell <3</p>
+											<p>~~nie pamietam czy juz sie wpisywalam~~ ilumi</p>
+											<p>C r y b a b y</p>
+											<p>Strix</p>
+											<p>Litwa</p>
+											<p>Szlug, szlugdog, Michalina :3</p>
+											<p>Zhalie</p>
 										</section>
-									</div>
-									<div id="sideCredits" style="position: fixed; right: 40px; top: 5%; width:
-									200px">
-										<h2>Specalne podziękowania dla:</h2><br>
-										<p><b>Rudolfa 'Pargusa' Brachuca</b> za umożliwienie nam dołączenie do
-											projektu w ostatniej chwili, oraz zajebistą robotę przy montowaniu tego
-											kolosalnego filmu. Na prawdę, szacunek stary.</p><br>
-										<p><b>Marcie 'TheŻelazoMarcie/TheMetalMarcie' Biernacka</b> za zgranie małej
-											grupki ludzi
-											tuż przed 500k subów oraz koordynację prac po naszej stronie.</p>
 									</div>
 								</div>
 							</section>
@@ -273,8 +287,21 @@
 							<p class="slide__figure-description"></p>
 						</figcaption>
 					</figure>
+					<div id="sideCredits" style="position: fixed; text-align: center; right: 70px; top: 15%; width:
+									200px">
+						<h2>Specalne podziękowania dla:</h2><br>
+						<p><b>Rudolfa 'Pargusa' Brachuca</b><br> za umożliwienie nam dołączenie do
+							projektu w ostatniej chwili, oraz zajebistą robotę przy montowaniu tego
+							kolosalnego filmu. Na prawdę, szacunek stary.</p><br>
+						<p><b>Marty 'TheŻelazoMarty/TheMetalMarty' Biernackiej</b><br> za zgranie małej
+							grupki ludzi
+							tuż przed 500k subów oraz koordynację prac po naszej stronie.</p>
+					</div>
 					<p style="position: fixed; bottom: 0; right: 100px; color: grey">Przygotowanie strony: Damian 'Epat'
-						Kuśmierz</p>
+						Kuśmierz
+					</p>
+					<span style=""
+						  id="input"></span>
 				</div>
 				<!--<div class="slide slide&#45;&#45;layout-5">-->
 					<!--<figure class="slide__figure">-->
@@ -341,7 +368,7 @@
 		<script src="scripts/imagesloaded.pkgd.min.js"></script>
 		<script src="scripts/TweenMax.min.js"></script>
 
-		<script src="scripts/flip.js"></script>
+		<script src="./scripts/flip.js"></script>
 	    <script src="./scripts/main.js" defer></script>
         <script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script>
         <script src="scripts/visualizer.coffee" type="text/coffeescript"></script>

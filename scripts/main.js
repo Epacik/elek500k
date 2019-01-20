@@ -54,7 +54,7 @@ function toggleLoading() {
 
 
 
-let kol = document.querySelectorAll("#kolaz img.indPh");
+let kol = document.querySelectorAll("#kolaz img");
 let kolWrap = document.getElementById("kolazWrap");
 let kolInt;
 let kolI;
@@ -97,12 +97,47 @@ observer.observe(e, {
     characterData: false
 });
 
+function initInput(mode) {
+    if (mode) {
+        document.addEventListener("keypress", ee);
+    } else {
+        document.removeEventListener("keypress", ee);
+    }
+}
+
+function openInNewTab(url2) {
+    var image = new Image();
+    image.src = url2;
+    var w = window.open("");
+    w.document.write(image.outerHTML);
+    w.focus();
+}
+
+function ee(e) {
+    console.log(e);
+    let eeStr = "eleven36";
+    let inp = document.getElementById("input");
+    let curStr = inp.innerText;
+    let curLen = curStr.length;
+    if (e.key.toLowerCase() === eeStr[curLen]) {
+        inp.innerText += e.key.toLowerCase();
+    }
+    if (inp.innerText === eeStr){
+        inp.innerText = "";
+        openInNewTab("../img/elek-w-wodzie.jpg")
+    }
+}
+
 var credits = document.getElementById('creditsWrapper');
 var observerCredits = new MutationObserver(function () {
     setAutoScroll(20);
     if (credits.classList.contains("slide--current")) {
         setAutoScroll(20);
+        initInput(true);
+    } else {
+        initInput(false);
     }
+    
 });
 
 observerCredits.observe(credits, {
@@ -159,8 +194,35 @@ function shufflePhotos() {
 
 }
 
-// window.onscrollwheel = function (e) {
-//  console.log("E");
-// }
+const colors1 = ['#f6f6f6','#f0f0f0','#e3e3e3','#d7d7d7','#d0d0d0'];
+const colors2 = ['#060606','#0f0f0f','#3e3e3e','#7d7d7d','#0d0d0d'];
+
+let sw =  document.querySelector('.elek');
+
+sw.addEventListener("click", darkModeSW);
+
+function darkModeSW(e) {
+    sw.classList.toggle("is-flipped");
+    document.getElementById("chMask").classList.add("active");
+    let rels = document.querySelectorAll(".revealer__item");
+    let c;
+    // if (rels[0].children[0].style.backgroundColor == "rgb(246, 246, 246)" || rels[0].children[0].style.backgroundColor == colors1[0]) {
+    //     c = colors2;
+    // } else{
+    //     c = colors1;
+    // }
+
+    setTimeout(() => {
+        document.body.classList.toggle("dark");
+        // for (let i = 0; i < rels.length; i++) {
+        //     let r = rels[i].children;
+        //     for (let j = 0; j < r.length; j++) {
+        //         r[j].style.backgroundColor = c[j];
+        //     }
+        // }
+    }, 2000);
+
+    setTimeout(()=> {document.getElementById("chMask").classList.remove("active");}, 4000);
+}
 
 toggleLoading();
