@@ -124,20 +124,20 @@ function ee(e) {
     }
     if (inp.innerText === eeStr){
         inp.innerText = "";
-        openInNewTab("../img/elek-w-wodzie.jpg")
+        openInNewTab("https://raw.githubusercontent.com/Epacik/elek500k/gh-pages/img/elek-w-wodzie.jpg")
     }
 }
 
 var credits = document.getElementById('creditsWrapper');
 var observerCredits = new MutationObserver(function () {
     setAutoScroll(20);
+
     if (credits.classList.contains("slide--current")) {
         setAutoScroll(20);
         initInput(true);
     } else {
         initInput(false);
     }
-    
 });
 
 observerCredits.observe(credits, {
@@ -149,6 +149,7 @@ observerCredits.observe(credits, {
 
 var eAudio = document.getElementById('visualizer');
 var observerAudio = new MutationObserver(function () {
+    ambient.pause();
     if (eAudio.classList.contains("slide--current")) {
         document.getElementById('audio').contentWindow.start();
     } else {
@@ -224,5 +225,10 @@ function darkModeSW(e) {
 
     setTimeout(()=> {document.getElementById("chMask").classList.remove("active");}, 4000);
 }
+
+// let ambient = document.getElementById("ambient");
+// ambient.volume = 0.1;
+
+
 
 toggleLoading();

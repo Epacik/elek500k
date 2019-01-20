@@ -447,12 +447,25 @@ i:active {
     /*}*/
 }
 
+@keyframes Blink {
+    0% {
+        color: transparent;
+    }
+    50% {
+        color: gray;
+    }
+    100% {
+    border-color: transparent;
+    }
+}
+
 #input {
     position: fixed;
     bottom: 5px;
     left: 300px;
     min-width:10px;
-    height: 10px;
+    height: 20px;
+    font-size: 19px;
     border-width: 0 2px 0 0;
     border-style: solid;
     color: grey;
@@ -461,4 +474,34 @@ i:active {
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-name: curBlink;
+}
+
+#kroniki {
+    position: fixed;
+    bottom: 35px;
+    left: 300px;
+    min-width:10px;
+    height: 10px;
+    color: grey;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-name: Blink;
+}
+
+#ee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000000;
+    padding: 3px;
+    display: none;
+
+}
+
+#ee img {
+    height: 100%;
 }
