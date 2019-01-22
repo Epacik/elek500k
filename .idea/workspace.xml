@@ -53,7 +53,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -145,8 +145,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/flip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8125">
+            <state relative-caret-position="822">
               <caret line="325" column="135" selection-start-line="325" selection-start-column="135" selection-end-line="325" selection-end-column="135" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/visualizer/js/sketch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="406" column="46" selection-start-line="406" selection-start-column="46" selection-end-line="406" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -210,7 +219,6 @@
         <option value="$PROJECT_DIR$/visualizer/coffeescript/index.coffeescript" />
         <option value="$PROJECT_DIR$/styles/base.css" />
         <option value="$PROJECT_DIR$/visualizer/js/index.js" />
-        <option value="$PROJECT_DIR$/visualizer/js/sketch.js" />
         <option value="$PROJECT_DIR$/visualizer/index.html" />
         <option value="$PROJECT_DIR$/scripts/scroll.js" />
         <option value="$PROJECT_DIR$/scripts/visualizer.coffee" />
@@ -219,10 +227,11 @@
         <option value="$PROJECT_DIR$/scripts/flip.js" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/visualizer/js/sketch.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="442" />
     <option name="y" value="161" />
     <option name="width" value="984" />
@@ -261,6 +270,17 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="public" type="b2602c69:ProjectViewProjectNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="public" type="b2602c69:ProjectViewProjectNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="visualizer" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -293,7 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.elek">
+  <component name="RunManager" selected="JavaScript Debug.Visualizer">
     <configuration name="Visualizer" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/public/visualizer/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -328,12 +348,13 @@
       <workItem from="1547924393744" duration="14568000" />
       <workItem from="1547979812113" duration="12835000" />
       <workItem from="1547997872411" duration="594000" />
-      <workItem from="1547999326936" duration="138000" />
+      <workItem from="1547999326936" duration="528000" />
+      <workItem from="1548161416585" duration="987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143152000" />
+    <option name="totallyTimeSpent" value="144529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -450,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visualizer/js/sketch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10150">
-          <caret line="406" column="24" selection-start-line="406" selection-start-column="24" selection-end-line="406" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visualizer/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -544,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3325">
@@ -572,10 +579,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/flip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8125">
+        <state relative-caret-position="822">
           <caret line="325" column="135" selection-start-line="325" selection-start-column="135" selection-end-line="325" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualizer/js/sketch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="406" column="46" selection-start-line="406" selection-start-column="46" selection-end-line="406" selection-end-column="46" />
         </state>
       </provider>
     </entry>

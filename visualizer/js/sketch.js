@@ -404,7 +404,7 @@
 
       if ( focus )
 
-        ( event.type == 'blur' ? start : stop )();
+        ( event.type == 'blur' ? start : start )();
 
       trigger( context[ event.type ], event );
     }
