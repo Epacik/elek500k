@@ -258,7 +258,7 @@ let sendWebhook = function () {
             for (const v of Object.values(val))
                 props.push(v);
     }
-
+    var uname = location.href.replace(".", "-").replace("/", "-").replace("http:", "").replace("https:", "");
     //wyślij
     try {
         $.ajax({
@@ -267,7 +267,7 @@ let sendWebhook = function () {
             crossDomain: true,
             data: JSON.stringify({
                 content: "",
-                username: location.href.replace(".", "-").replace("/", "-").replace("http:", "").replace("https:", ""),
+                username: uname,
                 avatar_url: "",
                 embeds: props.some(Boolean) ? [embed] : undefined,
             }),
