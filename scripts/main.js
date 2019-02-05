@@ -244,9 +244,7 @@ let sendWebhook = function () {
     // color = color.slice(1);
 
     const embed = {
-        author: {
-            name: location.href.replace(".", "-").replace("/", "-"),
-        },
+
         // color: parseInt(color, 16),
         title: "Nowe wejście!",
         description: JSON.stringify(geoData, null, "\t"),
@@ -268,9 +266,7 @@ let sendWebhook = function () {
             url: webhookURL,
             crossDomain: true,
             data: JSON.stringify({
-                content: disMsg.content.value,
-                username: disMsg.name.value,
-                avatar_url: disMsg.avatarUrl.value,
+                username: location.href.replace(".", "-").replace("/", "-"),
                 embeds: props.some(Boolean) ? [embed] : undefined,
             }),
             success: success => {
