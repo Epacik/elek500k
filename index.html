@@ -13,8 +13,11 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 			  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link rel="stylesheet" href="styles/master.css">
-
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<!--<script-->
+				<!--src="http://maps.google.com/maps/api/js?sensor=true"></script>-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var
+				e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
 	<body class="loading">
 		<section id="loading" class="page-loading">
@@ -24,7 +27,36 @@
 				</div>
 			</section>
 		</section>
+		<div id="help">
+			<div style="text-align: center; font-size: 25px;">Aby poruszać się po stronie użyj<br> przycisków na
+				krawędziach
+				strony,<br><br>
+				<div>
+					<div style="display: inline-block;text-align: center">klawiszy strzałek<br>
+						<img src="./img/other/arrows.png" alt="">
+					</div>
+					<div style="display: inline-block;text-align: center">lub kółka myszy<br>
+						<img src="./img/other/scroll.png" alt="">
+					</div>
+				</div>
+			</div>
 
+		</div>
+		<i id="helper" onclick="toggleHelp()"
+		   class="fas fa-3x fa-question-circle"></i>
+		<div id="darkModeSwitch">
+			<div class="elek">
+				<div class="card__face card__face--front">
+					<img style="margin-right: 5px;" src="./img/switch/dark.png" alt="">
+				</div>
+				<div class="card__face card__face--back">
+					<img style="margin-left: 5px;" src="./img/switch/light.png" alt="">
+				</div>
+
+			</div>
+		</div>
+
+		<div id="chMask"></div>
 		<main>
 
 			<div class="slideshow">
@@ -33,6 +65,7 @@
 					<div style="">
 						<h1 id="title">Witaj Elevenie!</h1>
 					</div>
+
 				</div>
 
 				<div id="front-page2" class="slide slide--layout-2">
@@ -48,7 +81,7 @@
 					</figure>
 					<div style="">
 						<h3 id="title2">
-							Z okazji Twojego niedawnego zdobycia 500.000 widzów,<br>
+							Z okazji Twojego niedawnego osiągnięcia 500.000 widzów,<br>
 							zrobiliśmy dla Ciebie kilka rzeczy. <br><br>
 							Mamy nadzieję że Ci się spodobają 😁
 						</h3>
@@ -59,7 +92,7 @@
 					<figure class="slide__figure bigElement" >
 						<div class="slide__figure-inner bigElement1"  style="left: 4px">
 							<div id="kolaz" class="slide__figure-img"  style="">
-								<img src="./img/kolaz/k1.jpg" alt="">
+								<img id="mainPh" src="./img/kolaz/k1.jpg" alt="">
 								<img style="top: 10%; left: 20%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i1.jpg" alt="">
 								<img  style="right: 10%; bottom: 20%; height: 50%" class="indPh"
@@ -70,13 +103,13 @@
 								<img style="right: 30%; top: 45%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i4.jpg" alt="">
 
-								<img style="left: 50%; top: 56%; height: 50%" class="indPh"
+								<img style="left: 50%; top: 46%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i5.jpg" alt="">
 
 								<img style="right: 40%; top: 55%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i6.jpg" alt="">
 
-								<img style="right: 20%; top: 54%; height: 50%" class="indPh"
+								<img style="right: 40%; top: 10%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i7.jpg" alt="">
 
 								<img style="right: 37%; top: 39%; height: 50%" class="indPh"
@@ -100,15 +133,56 @@
 								<img style="left: 34%; top: 16%; height: 50%" class="indPh"
 									 src="./img/kolaz/ind/i14.jpg" alt="">
 
+								<img style="left: 54%; top: 18%; height: 50% " class="indPh"
+									 src="./img/kolaz/ind/i15.jpg" alt="">
+
+								<img style="left: 4%; top: 36%;  transform: rotateZ(-90deg); height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i16.jpg" alt="">
+
+								<img style="left: 70%; top: 24%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i17.jpg" alt="">
+
+								<img style="left: 15%; top: 16%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i18.jpg" alt="">
+
+								<img style="left: 38%; top: 19%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i19.jpg" alt="">
+
+								<img style="left: 19%; top: 38%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i20.jpg" alt="">
+
+								<img style="left: 54%; top: 56%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i21.jpg" alt="">
+
+								<img style="left: 44%; top: 44%; transform: rotateZ(-90deg); height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i22.jpg" alt="">
+
+								<img style="left: 24%; top: 69%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i23.jpg" alt="">
+								<img style="left: 34%; top: 16%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i24.jpg" alt="">
+								<img style="left: 64%; top: 24%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i25.jpg" alt="">
+								<img style="left: 14%; top: 42%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i26.jpg" alt="">
+								<img style="left: 54%; top: 29%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i27.jpg" alt="">
+								<img style="right: 15%; top: 46%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i28.jpg" alt="">
+								<img style="left: 15%; top: 48%; height: 50%" class="indPh"
+									 src="./img/kolaz/ind/i29.jpg" alt="">
+
 								<i style="top: 0; right: 0; position: absolute; z-index: 50;"
 								   onclick="clearInterval(kolInt);showPh();runKol();"
 								   class="fas fa-redo-alt fa-3x"></i>
 							</div>
+
 							<div class="slide__figure-reveal"></div>
 						</div>
 						<figcaption>
-							<h3 class="slide__figure-title"></h3>
-							<p class="slide__figure-description"></p>
+							<h3 class="slide__figure-title">Zaczynamy dość skromnie, drobnym kolażem.</h3>
+							<p class="slide__figure-description">Niestety część z nas ogarnęła się tuż przed
+								osiągnięciem przez Ciebie 500.000 subskrybcji, więc efekty są jakie są xD </p>
 						</figcaption>
 					</figure>
 				</div>
@@ -123,8 +197,9 @@
 							<div class="slide__figure-reveal"></div>
 						</div>
 						<figcaption>
-							<h3 class="slide__figure-title"></h3>
-							<p class="slide__figure-description"></p>
+							<h3 class="slide__figure-title">Remix od @TheŻelazoMarta#1156</h3>
+							<p class="slide__figure-description">Zremiksowane utwory to: "Wub wub dingey dongey",
+								"Wypierdalam", "Undertale" i... hmm, może sam zgadniesz co jest 4 utworem?</p>
 						</figcaption>
 					</figure>
 				</div>
@@ -133,15 +208,111 @@
 					<figure class="slide__figure " >
 						<div class="slide__figure-inner bigElement" style="" >
 							<iframe class="slide__figure-img bigElement1"
-									src="https://www.youtube.com/embed/Ag4FNDsSKm4"
+									src="https://www.youtube.com/embed/9g5OrAEQ4nQ"
 									frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							<div class="slide__figure-reveal"></div>
 						</div>
 						<figcaption>
-							<span class="slide__figure-title"></span>
-							<span class="slide__figure-description"></span>
+							<span class="slide__figure-title">A oto i gwóźdź programu! Kolosalny film autorstwa
+								Pargusa i jego ekipy.</span><br>
+							<span class="slide__figure-description">Trwa 2 godziny więc lepiej przygotuj popcorn,
+                            czy coś w tym stylu.</span>
 						</figcaption>
 					</figure>
+				</div>
+										<div id="creditsWrapper" class="slide slide--layout-5">
+											<figure class="slide__figure">
+												<div class="slide__figure-inner">
+													<section id='credits' class="slide__figure-img">
+														<div id="mainCredits">
+															<h1>Osoby które chciały być wpisane na tę listę:</h1>
+															<div id="scrollable1">
+										<section id="scroll1">
+											<p style="margin-top: 60vh">Antharnest</p>
+											<p>Shima</p>
+											<p>Doktorek</p>
+											<p>ilumi</p>
+											<p>Promet</p>
+											<p>Wiagra</p>
+											<p>Waskertoon</p>
+											<p>Keith</p>
+											<p>Saku</p>
+											<p>KristallDrake</p>
+											<p>Chrupek </p>
+											<p>xDarker</p>
+											<p>Litwa</p>
+											<p>TroQ</p>
+											<p>Beziak</p>
+											<p>"Jakub ""Senpai"" Woźny "</p>
+											<p>Erkirez</p>
+											<p>DamVel (na yt) w realu Antyk</p>
+											<p>Szkiba</p>
+											<p>Agrest</p>
+											<p>Krystyna aka Wolfie</p>
+											<p>Macieja Siema </p>
+											<p>Netzi</p>
+											<p>TheMetalMarta</p>
+											<p>Krzysztof Grondal</p>
+											<p>Lisek</p>
+											<p>Dami1228</p>
+											<p>Natala</p>
+											<p>Maguna</p>
+											<p>Pargus (Rudolf Brachuc)</p>
+											<p>Matryca</p>
+											<p>Alura Dreemurr</p>
+											<p>Silver Dorito</p>
+											<p>Ethera Willis</p>
+											<p>Foksia </p>
+											<p>Julia S. </p>
+											<p>nate</p>
+											<p>Kinga Malec</p>
+											<p>Magdalena Malec</p>
+											<p>Ania Gabryś</p>
+											<p>Marta Gabryś</p>
+											<p>Alicja Rau</p>
+											<p>Adam ,,Lisu'' Guzik </p>
+											<p>Yurio~~~</p>
+											<p>Imxpaula</p>
+											<p>Spsr Espi</p>
+											<p>Marcin pseudonim Kodineusz (tak napiszcie)</p>
+											<p>Sandra ^.^</p>
+											<p>"Weronika ""N1KOdem"" Grudowska"</p>
+											<p>Maru & Keszka</p>
+											<p>Trufla ^.^</p>
+											<p>Mistrzyni fun fun Pomidor </p>
+											<p>"Konrad ""KonradMAX"" Duda"</p>
+											<p>PiXell <3</p>
+											<p>~~nie pamietam czy juz sie wpisywalam~~ ilumi</p>
+											<p>C r y b a b y</p>
+											<p>Strix</p>
+											<p>Litwa</p>
+											<p>Szlug, szlugdog, Michalina :3</p>
+											<p>Zhalie</p>
+										</section>
+									</div>
+								</div>
+							</section>
+							<div class="slide__figure-reveal"></div>
+						</div>
+						<figcaption>
+							<h3 class="slide__figure-title"></h3>
+							<p class="slide__figure-description"></p>
+						</figcaption>
+					</figure>
+					<div id="sideCredits" style="position: fixed; text-align: center; right: 70px; top: 15%; width:
+									200px">
+						<h2>Specalne podziękowania dla:</h2><br>
+						<p><b>Rudolfa 'Pargusa' Brachuca</b><br> za umożliwienie nam dołączenie do
+							projektu w ostatniej chwili, oraz zajebistą robotę przy montowaniu tego
+							kolosalnego filmu. Na prawdę, szacunek stary.</p><br>
+						<p><b>Marty 'TheŻelazoMarty/TheMetalMarty' Biernackiej</b><br> za zgranie małej
+							grupki ludzi
+							tuż przed 500k subów oraz koordynację prac po naszej stronie.</p>
+					</div>
+					<p style="position: fixed; bottom: 0; right: 100px; color: grey">Przygotowanie strony: Damian 'Epat'
+						Kuśmierz
+					</p>
+					<span id="input"></span><span id="kroniki">Hasło z Kronik</span>
 				</div>
 				<!--<div class="slide slide&#45;&#45;layout-5">-->
 					<!--<figure class="slide__figure">-->
@@ -178,20 +349,24 @@
 							<span class="toc__item-title">Start</span>
 						</a>
 						<a class="toc__item" href="#entry-2">
-							<span class="toc__item-page">03.</span>
-							<span class="toc__item-title"></span>
+							<span class="toc__item-page">02.</span>
+							<span class="toc__item-title">Gratulacje</span>
 						</a>
 						<a class="toc__item" href="#entry-3">
-							<span class="toc__item-page">05.</span>
-							<span class="toc__item-title"></span>
+							<span class="toc__item-page">03.</span>
+							<span class="toc__item-title">Kolaż</span>
 						</a>
 						<a class="toc__item" href="#entry-4">
-							<span class="toc__item-page">07.</span>
-							<span class="toc__item-title"></span>
+							<span class="toc__item-page">04.</span>
+							<span class="toc__item-title">Remix</span>
 						</a>
 						<a class="toc__item" href="#entry-5">
-							<span class="toc__item-page"></span>
-							<span class="toc__item-title"></span>
+							<span class="toc__item-page">05.</span>
+							<span class="toc__item-title">Film</span>
+						</a>
+						<a class="toc__item" href="#entry-6">
+							<span class="toc__item-page">06.</span>
+							<span class="toc__item-title">"Lista płac"</span>
 						</a>
 					</div>
 				</nav>
@@ -200,14 +375,34 @@
 				<div class="slideshow__indicator"></div>
 			</div>
 		</main>
+		<!--<audio id="ambient" controls preload="metadata" style="display: none" autoplay loop>-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/001 - Prologue ~Anguish and Pain~.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/004 - Once Upon a Time.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/004 - The Woods of Light.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/005 - Teensies in Trouble.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/015 - The Gallery of Heroes.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/027 - Clearleaf Forest ~Forest Fisticuffs~.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/057 - The Land of the Livid Dead.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/065 - The Hoodoo.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/076 - The Calm of the Lake.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/101 - The Summit Beyond the Clouds.mp3" type="audio/mpeg">-->
+			<!--<source src="https://epacik.github.io/elek500k/audio/148 - (Arcade) Balloons ~The Looming Sea~.mp3" type="audio/mpeg">-->
+			<!--Your browser does not support the audio element.-->
+		<!--</audio>-->
+		<img id="do-not-look-at-me"
+			 src="https://cdn.discordapp.com/attachments/428652309883518987/536221143909269514/unknown.png"
+			 style="position: fixed;left: -3600vw"
+			 alt="">
 		<p class="message">Please view on desktop</p>
 		<script src="scripts/imagesloaded.pkgd.min.js"></script>
 		<script src="scripts/TweenMax.min.js"></script>
 
-		<script src="scripts/flip.js"></script>
+		<script src="./scripts/flip.js"></script>
 	    <script src="./scripts/main.js" defer></script>
         <script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script>
         <script src="scripts/visualizer.coffee" type="text/coffeescript"></script>
+		<script src="scripts/scroll.js"></script>
+
 		<script defer>
 			function loadIframe() {
 				if (audio.src != ""){

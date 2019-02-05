@@ -19,7 +19,7 @@
 
   SMOOTHING = 0.5;
 
-  MP3_PATH = 'https://elek500k.firebaseapp.com/audio/eleven_specjal_II.mp3';
+  MP3_PATH = 'https://epacik.github.io/elek500k/audio/eleven_specjal_II.mp3';
 
   SCALE = {
     MIN: 5.0,

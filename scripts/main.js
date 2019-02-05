@@ -7,15 +7,25 @@ for (let i = pages.length - 1; i >= 0; i--){
 
 document.body.addEventListener("keydown", (e) => {
    // console.log(e);
-   if (e.code === "ArrowRight") {
-       document.getElementById("arr-right").click();
-   } else if (e.code === "ArrowLeft") {
-        document.getElementById("arr-left").click();
+    if (!document.getElementById("help").classList.contains("showHelp")) {
+        if (e.code === "ArrowRight" || e.code === "ArrowDown") {
+            document.getElementById("arr-right").click();
+        } else if (e.code === "ArrowLeft" || e.code === "ArrowUp") {
+            document.getElementById("arr-left").click();
+        }
     }
 });
 
 const scrollHandler = (e) => {
-    console.log(e);
+    // console.log(e);
+    if (!document.getElementById("help").classList.contains("showHelp") && e.target.id != "scroll1" && e.target.id != "scrollable1" && e.target.parentNode.id != "scroll1") {
+
+        if (e.deltaY > 0) {
+            document.getElementById("arr-right").click();
+        } else if (e.deltaY < 0) {
+            document.getElementById("arr-left").click();
+        }
+    }
 };
 
 // document.body.addEventListener('mousewheel', scrollHandler);
@@ -44,7 +54,7 @@ function toggleLoading() {
 
 
 
-let kol = document.querySelectorAll("#kolaz img.indPh");
+let kol = document.querySelectorAll("#kolaz img");
 let kolWrap = document.getElementById("kolazWrap");
 let kolInt;
 let kolI;
@@ -67,7 +77,7 @@ function runKol() {
                 clearInterval(kolInt);
             }
             kolI -= 1;
-        }, 2000);
+        }, 3000);
     } else {
         clearInterval(kolInt);
     }
@@ -75,12 +85,79 @@ function runKol() {
 }
 
 var e = document.getElementById('kolazWrap');
-var observer = new MutationObserver(function (event) {
+var observer = new MutationObserver(function () {
     showPh();
     runKol();
 });
 
 observer.observe(e, {
+    attributes: true,
+    attributeFilter: ['class'],
+    childList: false,
+    characterData: false
+});
+
+function initInput(mode) {
+    if (mode) {
+        document.addEventListener("keypress", ee);
+    } else {
+        document.removeEventListener("keypress", ee);
+    }
+}
+
+function openInNewTab(url2) {
+    var image = new Image();
+    image.src = url2;
+    var w = window.open("");
+    w.document.write(image.outerHTML);
+    w.focus();
+}
+
+function ee(e) {
+    console.log(e);
+    let eeStr = "eleven36";
+    let inp = document.getElementById("input");
+    let curStr = inp.innerText;
+    let curLen = curStr.length;
+    if (e.key.toLowerCase() === eeStr[curLen]) {
+        inp.innerText += e.key.toLowerCase();
+    }
+    if (inp.innerText === eeStr){
+        inp.innerText = "";
+        openInNewTab("https://raw.githubusercontent.com/Epacik/elek500k/gh-pages/img/elek-w-wodzie.jpg")
+    }
+}
+
+var credits = document.getElementById('creditsWrapper');
+var observerCredits = new MutationObserver(function () {
+    setAutoScroll(20);
+
+    if (credits.classList.contains("slide--current")) {
+        setAutoScroll(20);
+        initInput(true);
+    } else {
+        initInput(false);
+    }
+});
+
+observerCredits.observe(credits, {
+    attributes: true,
+    attributeFilter: ['class'],
+    childList: false,
+    characterData: false
+});
+
+var eAudio = document.getElementById('visualizer');
+var observerAudio = new MutationObserver(function () {
+    ambient.pause();
+    if (eAudio.classList.contains("slide--current")) {
+        document.getElementById('audio').contentWindow.start();
+    } else {
+        document.getElementById('audio').contentWindow.stop();
+    }
+});
+
+observerAudio.observe(eAudio, {
     attributes: true,
     attributeFilter: ['class'],
     childList: false,
@@ -105,9 +182,74 @@ function togglePlay() {
     }
 }
 
+function toggleHelp() {
 
-// window.onscrollwheel = function (e) {
-//  console.log("E");
-// }
+    if (document.getElementById("help").classList.contains("showHelp")) {
+        document.getElementById("help").classList.remove("showHelp");
+    } else {
+        document.getElementById("help").classList.add("showHelp");
+    }
+}
 
+function shufflePhotos() {
+
+}
+
+const colors1 = ['#f6f6f6','#f0f0f0','#e3e3e3','#d7d7d7','#d0d0d0'];
+const colors2 = ['#060606','#0f0f0f','#3e3e3e','#7d7d7d','#0d0d0d'];
+
+let sw =  document.querySelector('.elek');
+
+sw.addEventListener("click", darkModeSW);
+
+function darkModeSW(e) {
+    sw.classList.toggle("is-flipped");
+    document.getElementById("chMask").classList.add("active");
+    let rels = document.querySelectorAll(".revealer__item");
+    let c;
+    // if (rels[0].children[0].style.backgroundColor == "rgb(246, 246, 246)" || rels[0].children[0].style.backgroundColor == colors1[0]) {
+    //     c = colors2;
+    // } else{
+    //     c = colors1;
+    // }
+
+    setTimeout(() => {
+        document.body.classList.toggle("dark");
+        // for (let i = 0; i < rels.length; i++) {
+        //     let r = rels[i].children;
+        //     for (let j = 0; j < r.length; j++) {
+        //         r[j].style.backgroundColor = c[j];
+        //     }
+        // }
+    }, 2000);
+
+    setTimeout(()=> {document.getElementById("chMask").classList.remove("active");}, 4000);
+}
+
+// let ambient = document.getElementById("ambient");
+// ambient.volume = 0.1;
 toggleLoading();
+
+let geoData;
+
+$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+    geoData = data;
+});
+
+// var geocodeData;
+// $.ajax({
+//     url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDsdu6wyQO901uls4qJQRQ9FBQyiWrFDZs',
+//     dataType: 'json',
+//     type: 'post',
+//     contentType: 'application/json',
+//     data: JSON.stringify( { "first-name": $('#first-name').val(), "last-name": $('#last-name').val() } ),
+//     processData: false,
+//     success: function( data, textStatus, jQxhr ){
+//         $('#response pre').html( geocodeData = data  );
+//     },
+//     error: function( jqXhr, textStatus, errorThrown ){
+//         console.log( errorThrown );
+//     }
+// });
+
+

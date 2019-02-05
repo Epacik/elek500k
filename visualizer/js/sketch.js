@@ -402,7 +402,7 @@
 
     function active( event ) {
 
-      if ( context.autopause )
+      if ( focus )
 
         ( event.type == 'blur' ? start : start )();
 
