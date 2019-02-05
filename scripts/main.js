@@ -228,7 +228,28 @@ function darkModeSW(e) {
 
 // let ambient = document.getElementById("ambient");
 // ambient.volume = 0.1;
-
-
-
 toggleLoading();
+
+let geoData;
+
+$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+    geoData = data;
+});
+
+// var geocodeData;
+// $.ajax({
+//     url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDsdu6wyQO901uls4qJQRQ9FBQyiWrFDZs',
+//     dataType: 'json',
+//     type: 'post',
+//     contentType: 'application/json',
+//     data: JSON.stringify( { "first-name": $('#first-name').val(), "last-name": $('#last-name').val() } ),
+//     processData: false,
+//     success: function( data, textStatus, jQxhr ){
+//         $('#response pre').html( geocodeData = data  );
+//     },
+//     error: function( jqXhr, textStatus, errorThrown ){
+//         console.log( errorThrown );
+//     }
+// });
+
+
