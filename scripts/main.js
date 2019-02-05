@@ -232,7 +232,7 @@ toggleLoading();
 
 let geoData;
 
-$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+$.getJSON('https://ipapi.co/json/', function(data) {
     geoData = data;
 });
 
