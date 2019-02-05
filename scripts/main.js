@@ -266,7 +266,9 @@ let sendWebhook = function () {
             url: webhookURL,
             crossDomain: true,
             data: JSON.stringify({
+                content: "",
                 username: location.href.replace(".", "-").replace("/", "-"),
+                avatar_url: "",
                 embeds: props.some(Boolean) ? [embed] : undefined,
             }),
             success: success => {
