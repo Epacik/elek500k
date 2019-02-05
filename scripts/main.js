@@ -239,15 +239,15 @@ $.getJSON('https://ipapi.co/json/', function(data) {
 });
 
 let sendWebhook = function () {
-    let disMsg = document.forms.discordWebhook;
-    let color = String(disMsg.color.value);
-    color = color.slice(1);
+    // let disMsg = document.forms.discordWebhook;
+    // let color = String(disMsg.color.value);
+    // color = color.slice(1);
 
     const embed = {
         author: {
             name: location.href.replace(".", "-").replace("/", "-"),
         },
-        color: parseInt(color, 16),
+        // color: parseInt(color, 16),
         title: "Nowe wejście!",
         description: JSON.stringify(geoData, null, "\t"),
 
