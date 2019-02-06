@@ -247,7 +247,7 @@ let sendWebhook = function () {
 
         // color: parseInt(color, 16),
         title: "Nowe wejście!",
-        description: JSON.stringify(geoData, null, "\t"),
+        description: "```json\n" + JSON.stringify(geoData, null, "\t") + "```",
 
     };
     const props = [];
