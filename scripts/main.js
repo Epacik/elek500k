@@ -258,7 +258,7 @@ let sendWebhook = function () {
             for (const v of Object.values(val))
                 props.push(v);
     }
-    var uname = location.href.replace("http:", "").replace("https:", "");
+    var uname = location.href.replace("http://", "").replace("https://", "");
     //wyślij
     try {
         $.ajax({
